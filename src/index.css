@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+.container {
+  max-width: 1180px;
+  padding-bottom: 48px;
+}
+
+.MuiCardContent-root {
+  padding: 28px;
+}
+
+.MuiCardContent-root:last-child {
+  padding-bottom: 28px;
+}
+
+.warrior-form .MuiFormLabel-root,
+.warrior-form .warrior-form__label {
+  color: #f4dfff;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.warrior-form .MuiFormLabel-root.Mui-focused {
+  color: #dfb8ff;
+}
+
+.army-table.MuiTableContainer-root {
+  border: 1px solid rgba(192, 132, 252, 0.2);
+  border-radius: 18px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  background: linear-gradient(145deg, rgba(28, 20, 38, 0.98), rgba(17, 13, 24, 0.98));
+}
+
+.army-table .MuiTableHead-root {
+  background: linear-gradient(105deg, rgba(126, 34, 206, 0.36), rgba(219, 39, 119, 0.23));
+}
+
+.army-table .MuiTableHead-root .MuiTableCell-root {
+  padding: 19px 16px;
+  color: #f4dfff;
+  border-color: rgba(216, 180, 254, 0.2);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.army-table .MuiTableBody-root .MuiTableRow-root {
+  transition: background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.army-table .MuiTableBody-root .MuiTableRow-root:nth-of-type(even) {
+  background-color: rgba(192, 132, 252, 0.035);
+}
+
+.army-table .MuiTableBody-root .MuiTableRow-root:hover {
+  background-color: rgba(192, 132, 252, 0.1);
+  box-shadow: inset 3px 0 #f472b6;
+}
+
+.army-table .MuiTableBody-root .MuiTableCell-root {
+  padding: 17px 16px;
+  border-color: rgba(216, 180, 254, 0.1);
+  color: #e6dbea;
+  font-size: 0.94rem;
+}
+
+.army-table .MuiTableBody-root .army-table__name {
+  color: #f9eaff;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+}
+
+.army-table__level {
+  display: inline-grid;
+  min-width: 42px;
+  min-height: 34px;
+  padding: 0 8px;
+  place-items: center;
+  border: 1px solid rgba(244, 114, 182, 0.32);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(126, 34, 206, 0.2), rgba(219, 39, 119, 0.14));
+  color: #f9a8d4;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.army-table .army-table__empty {
+  padding: 42px 20px;
+  color: #c4b5d0;
+  text-align: center;
+}
+
+.army-table__empty-title {
+  display: block;
+  margin-bottom: 7px;
+  color: #f4dfff;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.MuiOutlinedInput-root {
+  background-color: rgba(10, 7, 15, 0.42);
+}
+
+.MuiSlider-root {
+  color: #c084fc;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding-inline: 16px;
+  }
+
+  .MuiCardContent-root {
+    padding: 20px;
+  }
+
+  .MuiCardContent-root:last-child {
+    padding-bottom: 20px;
+  }
+
+  .army-table .MuiTableHead-root .MuiTableCell-root {
+    padding: 14px 12px;
+    font-size: 0.65rem;
+  }
+
+  .army-table .MuiTableBody-root .MuiTableCell-root {
+    padding: 14px 12px;
+    font-size: 0.84rem;
+  }
+
+  .army-table .MuiTableBody-root .army-table__name {
+    font-size: 0.98rem;
+  }
+}
