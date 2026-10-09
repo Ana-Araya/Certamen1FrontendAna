@@ -1,8 +1,8 @@
 import { Card, CardContent, Typography, TextField, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, Slider, InputLabel, Select, MenuItem, Rating, Button } from '@mui/material';
 
-function GuerreroForm({ formulario, handleChange, handleSubmit, setFormulario }) {
+function GuerreroForm({ datosGuerrero, manejarEntrada, registrarGuerrero, setDatosGuerrero }) {
   return (
-    <Card elevation={3} className="warrior-form">
+    <Card elevation={3} className="formulario-guerrero">
       <CardContent>
         <Typography
           variant="h5"
@@ -17,23 +17,23 @@ function GuerreroForm({ formulario, handleChange, handleSubmit, setFormulario })
         >
           Registrar Guerrero
         </Typography>
-        <form onSubmit={handleSubmit}>
-          <TextField fullWidth label="Nombre del Guerrero" name="nombre" value={formulario.nombre} onChange={handleChange} required margin="normal" />
+        <form onSubmit={registrarGuerrero}>
+          <TextField fullWidth label="Nombre del Guerrero" name="nombre" value={datosGuerrero.nombre} onChange={manejarEntrada} required margin="normal" />
 
           <FormControl component="fieldset" margin="normal">
             <FormLabel component="legend">Tipo de Guerrero</FormLabel>
-            <RadioGroup row name="tipo" value={formulario.tipo} onChange={handleChange}>
+            <RadioGroup row name="tipo" value={datosGuerrero.tipo} onChange={manejarEntrada}>
               <FormControlLabel value="Orco" control={<Radio />} label="Orco" />
               <FormControlLabel value="Uruk" control={<Radio />} label="Uruk" />
             </RadioGroup>
           </FormControl>
 
-          <Typography className="warrior-form__label" gutterBottom mt={2}>Nivel de Combate</Typography>
-          <Slider name="nivel" value={formulario.nivel} onChange={handleChange} min={1} max={100} valueLabelDisplay="auto" />
+          <Typography className="etiqueta-formulario" gutterBottom mt={2}>Nivel de Combate</Typography>
+          <Slider name="nivel" value={datosGuerrero.nivel} onChange={manejarEntrada} min={1} max={100} valueLabelDisplay="auto" />
 
           <FormControl fullWidth margin="normal" required>
             <InputLabel>Categoría / Rango</InputLabel>
-            <Select name="rango" value={formulario.rango} label="Categoría / Rango" onChange={handleChange}>
+            <Select name="rango" value={datosGuerrero.rango} label="Categoría / Rango" onChange={manejarEntrada}>
               <MenuItem value="Capitán">Capitán</MenuItem>
               <MenuItem value="Berserker">Berserker</MenuItem>
               <MenuItem value="Explorador">Explorador</MenuItem>
@@ -41,13 +41,13 @@ function GuerreroForm({ formulario, handleChange, handleSubmit, setFormulario })
             </Select>
           </FormControl>
 
-          <Typography className="warrior-form__label" gutterBottom mt={2}>Nivel de Amenaza / Furia</Typography>
+          <Typography className="etiqueta-formulario" gutterBottom mt={2}>Nivel de Amenaza / Furia</Typography>
           <Rating
             name="rating"
             aria-label="Nivel de amenaza o furia"
             size="large"
-            value={formulario.rating}
-            onChange={(_, newValue) => setFormulario({ ...formulario, rating: newValue || 1 })}
+            value={datosGuerrero.rating}
+            onChange={(_, newValue) => setDatosGuerrero((datosActuales) => ({ ...datosActuales, rating: newValue || 1 }))}
             min={1}
             max={5}
             sx={{
